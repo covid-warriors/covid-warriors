@@ -10216,3 +10216,8 @@ body {
 .sb-sidenav-light .sb-sidenav-footer {
   background-color: #e9ecef;
 }
+
+
+.app-edit-panel button {
+  margin: 0 5px !important;
+}

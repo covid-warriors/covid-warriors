@@ -14,7 +14,7 @@ const InventoryCardPanel = () => (
         <div className="card-body">
           <h5 className="card-title">Grocery</h5>
           <p className="card-text">Manage your groceries stock</p>
-          <a href="/add-inventory" className="btn btn-primary">Add</a>
+          <a href="/add-edit-inventory" className="btn btn-primary">Add/ Edit</a>
         </div>
       </div>
     </div>
@@ -24,7 +24,7 @@ const InventoryCardPanel = () => (
         <div className="card-body">
           <h5 className="card-title">Vegetables</h5>
           <p className="card-text">Manage your vegetables stock</p>
-          <a href="/add-inventory" className="btn btn-primary">Add</a>
+          <a href="/add-edit-inventory" className="btn btn-primary">Add/ Edit</a>
         </div>
       </div>
     </div>
@@ -34,7 +34,7 @@ const InventoryCardPanel = () => (
         <div className="card-body">
           <h5 className="card-title">Meat</h5>
           <p className="card-text">Manage your meat stock</p>
-          <a href="/add-inventory" className="btn btn-primary">Add</a>
+          <a href="/add-edit-inventory" className="btn btn-primary">Add/ Edit</a>
         </div>
       </div>
     </div>
@@ -44,7 +44,7 @@ const InventoryCardPanel = () => (
         <div className="card-body">
           <h5 className="card-title">Medicine</h5>
           <p className="card-text">Manage your medicines stock</p>
-          <a href="/add-inventory" className="btn btn-primary">Add</a>
+          <a href="/add-edit-inventory" className="btn btn-primary">Add/ Edit</a>
         </div>
       </div>
     </div>
