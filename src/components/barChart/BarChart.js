@@ -32,9 +32,9 @@ const BarChart = (props) => {
   return (
     <React.Fragment key={index}>
       <div className="name-of-item">{item.name}</div>
-      <div data-tip={`${item.currentStock}item(s) available.`} key={index} className="items-parent">
+      <div data-tip={`${item.unitsAdded - item.currentStock} item(s) already consumed`} key={index} className="items-parent">
         <div className={progressClass.join(" ")}>
-          <div style={{ fontSize: '13px' }}>{divWidth}%</div>
+          <div data-tip={`${item.currentStock} item(s) available`} style={{ fontSize: '13px' }}>{divWidth}%</div>
         </div>
       </div>
       <ReactTooltip />

@@ -6,3 +6,8 @@
   min-height: 204px;
 }
 
+@media (min-width: 549px) {
+  .graph-panel {
+    padding-bottom: 24px;
+  }
+}

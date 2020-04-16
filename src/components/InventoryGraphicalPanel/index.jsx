@@ -77,10 +77,11 @@ const InventoryGraphicalPanel = () => {
   ];
 
   return (
-    <div className="row" style={{ minHeight: '300px' }}>
+    <div className="row graph-panel" style={{ minHeight: '300px' }}>
       <div className="col-xl-6">
         <div className="card">
           <div className="card-body">
+            <h3>Food items</h3>
             <BarChart items={aboutToFinishFoodItems} />
           </div>
         </div>
@@ -88,6 +89,7 @@ const InventoryGraphicalPanel = () => {
       <div className="col-xl-6">
         <div className="card">
           <div className="card-body">
+          <h3>Medicines</h3>
             <BarChart items={aboutToFinishMedicines} />
           </div>
         </div>
