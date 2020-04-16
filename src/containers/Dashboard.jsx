@@ -1,11 +1,15 @@
 import React, { Component } from 'react';
 
+import AppContext from "../AppContext";
+
 import SidePanel from '../components/SidePanel';
 import InventoryGraphicalPanel from '../components/InventoryGraphicalPanel';
 import InventoryCardPanel from '../components/InventoryCardPanel';
 
 class Dasboard extends Component {
-
+	constructor(props) {
+		super(props);
+	}
 	render = () => {
 		return (
 			<div id="layoutSidenav">
@@ -13,8 +17,8 @@ class Dasboard extends Component {
 				<div id="layoutSidenav_content">
 					<main>
 						<div className="container-fluid">
-							<h4 className="mt-4">Overview</h4>
-							<InventoryGraphicalPanel />
+							<h4 className="mt-4">Inventory status</h4>
+							<InventoryGraphicalPanel inventory={this.props.context.inventoryData} />
 							<InventoryCardPanel />
 						</div>
 					</main>
@@ -23,5 +27,14 @@ class Dasboard extends Component {
 		);
 	}
 }
+const withContext = (Component) => {
+	return (props) => (
+		<AppContext.Consumer>
+			{(context) => {
+				return <Component {...props} context={context} />
+			}}
+		</AppContext.Consumer>
+	)
+}
 
-export default Dasboard;
+export default withContext(Dasboard);

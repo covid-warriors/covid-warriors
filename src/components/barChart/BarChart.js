@@ -10,7 +10,7 @@ const BarChart = (props) => {
 
   const allItems = items.map((item, index) => {
 
-    const divWidth = Math.round((item.currentStock / item.unitsAdded * 100) / 10) * 10;
+    const divWidth = Math.round((item.stock / item.monthlyUnits * 100) / 10) * 10;
 
     const progressClass = [];
 
@@ -32,9 +32,9 @@ const BarChart = (props) => {
   return (
     <React.Fragment key={index}>
       <div className="name-of-item">{item.name}</div>
-      <div data-tip={`${item.unitsAdded - item.currentStock} item(s) already consumed`} key={index} className="items-parent">
+      <div data-tip={`${item.monthlyUnits - item.stock} item(s) already consumed`} key={index} className="items-parent">
         <div className={progressClass.join(" ")}>
-          <div data-tip={`${item.currentStock} item(s) available`} style={{ fontSize: '13px' }}>{divWidth}%</div>
+          <div data-tip={`${item.stock} item(s) available`} style={{ fontSize: '12px' }}>{divWidth}%</div>
         </div>
       </div>
       <ReactTooltip />

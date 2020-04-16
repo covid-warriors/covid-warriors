@@ -1,0 +1,102 @@
+[
+    {
+        "category": "grocery",
+        "items": [
+            {
+                "id": 1,
+                "name": "Soya",
+                "unit": "kg",
+                "monthlyUnits": 10,
+                "stock": 2,
+                "notifyWhenUnitReaches": 2
+            },
+            {
+                "id": 2,
+                "name": "Sauce",
+                "unit": "kg",
+                "monthlyUnits": 10,
+                "stock": 0.5,
+                "notifyWhenUnitReaches": 1
+            },
+            {
+                "id": 3,
+                "name": "Milk",
+                "unit": "kg",
+                "monthlyUnits": 5,
+                "stock": 3,
+                "notifyWhenUnitReaches": 3
+            },
+            {
+                "id": 4,
+                "name": "Dal",
+                "unit": "kg",
+                "monthlyUnits": 3,
+                "stock": 1,
+                "notifyWhenUnitReaches": 1
+            }
+        ]
+    },
+    {
+        "category": "meat",
+        "items": [
+            {
+                "id": 1,
+                "name": "chicken",
+                "unit": "kg",
+                "monthlyUnits": 10,
+                "stock": 2,
+                "notifyWhenUnitReaches": 2
+            },
+            {
+                "id": 2,
+                "name": "Red meat",
+                "unit": "kg",
+                "monthlyUnits": 10,
+                "stock": 0.5,
+                "notifyWhenUnitReaches": 1
+            }
+        ]
+    },
+    {
+        "category": "vegetables",
+        "items": [
+            {
+                "id": 1,
+                "name": "potato",
+                "unit": "kg",
+                "monthlyUnits": 10,
+                "stock": 2,
+                "notifyWhenUnitReaches": 2
+            },
+            {
+                "id": 2,
+                "name": "onion",
+                "unit": "kg",
+                "monthlyUnits": 10,
+                "stock": 0.5,
+                "notifyWhenUnitReaches": 1
+            }
+        ]
+    },
+    {
+        "category": "medicine",
+        "items": [
+            {
+                "id": 10,
+                "name": "Paracetamol",
+                "unit": "pack",
+                "monthlyUnits": 10,
+                "stock": 9,
+                "notifyWhenUnitReaches": 2
+            },
+            {
+                "id": 12,
+                "name": "Decolic",
+                "unit": "pack",
+                "monthlyUnits": 10,
+                "stock": 0.5,
+                "notifyWhenUnitReaches": 1
+            }
+        ]
+    }
+]

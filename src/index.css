@@ -10016,6 +10016,7 @@ body {
   flex-grow: 1;
   min-height: calc(100vh - 56px);
   margin-left: -225px;
+  background: #f5efef;
 }
 
 .sb-sidenav-toggled #layoutSidenav #layoutSidenav_nav {
@@ -10221,9 +10222,4 @@ body {
 }
 .sb-sidenav-light .sb-sidenav-footer {
   background-color: #e9ecef;
-}
-
-
-.app-edit-panel button {
-  margin: 0 5px !important;
 }

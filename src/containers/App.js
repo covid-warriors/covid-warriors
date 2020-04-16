@@ -7,46 +7,65 @@ import {
 } from "react-router-dom";
 import Radium, { StyleRoot } from 'radium';
 
+import AppContext from "../AppContext";
+
 import Header from '../components/Header/index';
 import Footer from '../components/Footer';
 import Dashboard from './Dashboard';
 import AddEditInventories from './AddEditInventories';
 
+import InventoryData from '../data/inventory.json';
+
 import './App.css';
 
 class App extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      inventoryData: InventoryData
+    };
+    window.selectedCategory = 'grocery';
+  }
+
+  updateInventoryData = (data) => {
+    this.setState({ inventoryData: data });
+  }
 
   render = () => {
     const loggedIn = true;
     return (
-      <StyleRoot>
-        <center>
-          <Header />
-          <Router>
-            <Switch>
-              <Route
-                path="/dashboard"
-              >
-                <Dashboard />
-              </Route>
-              <Route 
-                exact
-                path="/add-edit-inventory"
-              >
-                <AddEditInventories />
-              </Route>
-              <Route exact path="/" render={() => (
-                loggedIn ? (
-                  <Redirect to="/dashboard"/>
-                ) : (
-                  <Redirect to="/login"/>
-                )
-              )}/>
-            </Switch>
-          </Router>
-          <Footer />       
-        </center>
-      </StyleRoot>
+      <AppContext.Provider value={{ inventoryData: this.state.inventoryData, updateInventoryData: this.updateInventoryData }}>
+        <StyleRoot>
+          <center>
+            <Header />
+            <Router>
+              <Switch>
+
+                <Route
+                  exact
+                  path="/dashboard"
+                  component={Dashboard}
+                />
+                <Route
+                  exact
+                  path="/add-edit-inventory"
+                  component={AddEditInventories}
+                />
+                <Route exact path="/" render={() => (
+                  loggedIn ? (
+                    <Redirect to="/dashboard" />
+                  ) : (
+                      <Redirect to="/login" />
+                    )
+                )} />
+
+              </Switch>
+            </Router>
+            <Footer />
+          </center>
+        </StyleRoot>
+
+      </AppContext.Provider >
     );
   }
 }

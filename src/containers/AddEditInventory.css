@@ -1,0 +1,12 @@
+.add-edit-panel {
+  min-height: calc(100vh - 17vh);
+}
+
+.add-edit-panel button {
+  margin: 0 5px !important;
+}
+
+.add-edit-panel .submit-button {
+  position: absolute;
+  right: 10px;
+}

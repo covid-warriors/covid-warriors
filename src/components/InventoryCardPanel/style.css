@@ -1,8 +1,12 @@
+.inventory-card {
+  padding: 10px 0;
+  outline: 1px solid darkgrey;
+}
 .inventory-card .card{
-  min-height: 335px;
+  min-height: 290px;
 }
 
 .inventory-card img{
-  height: 204px;
+  height: 150px;
 }
 

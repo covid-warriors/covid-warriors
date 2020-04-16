@@ -1,9 +1,14 @@
 .inventory-card .card {
-  min-height: 335px;
+  min-height: 290px;
+  border: 1px solid grey;
 }
 
 .inventory-card img {
-  min-height: 204px;
+  height: 150px;
+}
+
+.graph-panel div.card {
+  margin-bottom: 10px;
 }
 
 @media (min-width: 549px) {
