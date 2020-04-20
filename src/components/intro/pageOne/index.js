@@ -1,6 +1,6 @@
 import React, { memo } from 'react';
 import '../style.css';
-import intro1 from '../../../assets/img/introOne.png';
+import intro1 from '../../../assets/img/introOnes.png';
 
 const IntroOne = () => (
 	<div className="card intro-card-1">
