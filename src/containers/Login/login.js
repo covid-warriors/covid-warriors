@@ -15,6 +15,7 @@ export default class Login extends Component {
   authorizeationHelper = (event) => {
     if (this.state.userName && this.state.password) {
       this.props.history.push(`/dashboard`);
+      this.context.authorizeUser(this.state);
     }
   }
   render() {

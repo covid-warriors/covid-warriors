@@ -10,13 +10,13 @@ const InventoryCardPanel = () => {
     <React.Fragment>
       <h4>All items</h4>
       <div className="inventory-card">
-        <Link to="/add-edit-inventory" onClick={() => setCurrentCategory('Grocery')}>
+        <Link to="/list-items" onClick={() => setCurrentCategory('Grocery')}>
           <div className="grocery-icon"></div>
         </Link>
-        <Link to="/add-edit-inventory" onClick={() => setCurrentCategory('Meat')}>
+        <Link to="/list-items" onClick={() => setCurrentCategory('Meat')}>
           <div className="meat-icon"></div>
         </Link>
-        <Link to="/add-edit-inventory" onClick={() => setCurrentCategory('Medicine')}>
+        <Link to="/list-items" onClick={() => setCurrentCategory('Medicine')}>
           <div className="medicine-icon"></div>
         </Link>
         <a href="#">

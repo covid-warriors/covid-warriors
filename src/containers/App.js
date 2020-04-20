@@ -15,6 +15,7 @@ import Dashboard from './Dashboard';
 import AddEditInventories from './AddEditInventories';
 import ChatBot from '../components/ChatBot/ChatBot';
 import Login from '../containers/Login/login';
+import ListItems from '../components/ListItems/ListItems';
 
 import InventoryData from '../data/inventory.json';
 import './App.css';
@@ -68,6 +69,11 @@ class App extends Component {
                   exact
                   path="/login"
                   render={ props => <Login {...props} />}
+                />
+                <Route
+                  exact
+                  path="/list-items"
+                  render={ props => <ListItems {...props} />}
                 />
                 <Route
                   exact
