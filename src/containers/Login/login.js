@@ -12,9 +12,9 @@ export default class Login extends Component {
 
   static contextType = AppContext;
 
-  authorizeationHelper = (event) => {
+  authorizeationHelper = () => {
     if (this.state.userName && this.state.password) {
-      this.props.history.push(`/dashboard`);
+      this.props.history.push(`/IntroOne`);
     }
   }
   render() {

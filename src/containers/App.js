@@ -38,7 +38,6 @@ class App extends Component {
   }
 
   authorizeUser = ({ userName, password }) => {
-    console.log('username and password--', userName, password);
     if (userName && password) {
       this.setState({
         isLoggedIn: true
