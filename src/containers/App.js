@@ -17,6 +17,9 @@ import AddItems from './AddItems';
 import ChatBot from '../components/ChatBot/ChatBot';
 import Login from '../containers/Login/login';
 
+import IntroOne from '../components/intro/pageOne';
+import IntroTwo from '../components/intro/pageTwo';
+
 import InventoryData from '../data/inventory.json';
 import './App.css';
 
@@ -60,6 +63,17 @@ class App extends Component {
             <Header />
             <Router>
               <Switch>
+                <Route
+                  exact
+                  path="/IntroOne"
+                  component={IntroOne}
+                />
+                <Route
+                  exact
+                  path="/IntroTwo"
+                  component={IntroTwo}
+                />
+
                 <Route
                   exact
                   path="/dashboard"
