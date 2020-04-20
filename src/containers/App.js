@@ -13,6 +13,7 @@ import Header from '../components/Header/index';
 import Footer from '../components/Footer';
 import Dashboard from './Dashboard';
 import AddEditInventories from './AddEditInventories';
+import AddItems from './AddItems';
 import ChatBot from '../components/ChatBot/ChatBot';
 import Login from '../containers/Login/login';
 
@@ -73,6 +74,11 @@ class App extends Component {
                   exact
                   path="/add-edit-inventory"
                   component={AddEditInventories}
+                />
+                <Route
+                  exact
+                  path="/add-items"
+                  component={AddItems}
                 />
                 <Route
                   exact
