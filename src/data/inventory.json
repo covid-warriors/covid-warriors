@@ -5,10 +5,20 @@
       {
         "id": 3,
         "name": "Milk",
-        "unit": "kg",
+        "unit": "ltr",
         "monthlyUnits": 5,
-        "stock": 1,
-        "notifyWhenUnitReaches": 3
+        "stock": 0,
+        "notifyWhenUnitReaches": 3,
+        "notify": "Weekly"
+      },
+      {
+        "id": 3,
+        "name": "Bread",
+        "unit": "pack",
+        "monthlyUnits": 5,
+        "stock": 0,
+        "notifyWhenUnitReaches": 3,
+        "notify": "Weekly"
       },
       {
         "id": 4,
@@ -16,7 +26,8 @@
         "unit": "kg",
         "monthlyUnits": 40,
         "stock":4,
-        "notifyWhenUnitReaches": 1
+        "notifyWhenUnitReaches": 1,
+        "notify": "Monthly"
       }
     ]
   },
@@ -29,7 +40,8 @@
         "unit": "kg",
         "monthlyUnits": 10,
         "stock": 2,
-        "notifyWhenUnitReaches": 2
+        "notifyWhenUnitReaches": 2,
+        "notify": "Weekly"
       },
       {
         "id": 2,
@@ -37,7 +49,17 @@
         "unit": "kg",
         "monthlyUnits": 20,
         "stock": 4,
-        "notifyWhenUnitReaches": 1
+        "notifyWhenUnitReaches": 1,
+        "notify": "Monthly"
+      },
+      {
+        "id": 2,
+        "name": "Koyel",
+        "unit": "kg",
+        "monthlyUnits": 5,
+        "stock": 4,
+        "notifyWhenUnitReaches": 1,
+        "notify": "Monthly"
       }
     ]
   },
@@ -50,7 +72,8 @@
         "unit": "pack",
         "monthlyUnits": 10,
         "stock": 9,
-        "notifyWhenUnitReaches": 2
+        "notifyWhenUnitReaches": 2,
+        "notify": "Monthly"
       },
       {
         "id": 12,
@@ -58,7 +81,8 @@
         "unit": "pack",
         "monthlyUnits": 10,
         "stock": 0.5,
-        "notifyWhenUnitReaches": 1
+        "notifyWhenUnitReaches": 1,
+        "notify": "Monthly"
       }
     ]
   }

@@ -1,0 +1,70 @@
+.item-image {
+  width: 100%;
+  min-height: 200px;
+  background-position: 2px;
+  background-size: auto 257px;
+  background-repeat: no-repeat;
+  border-bottom: 1px solid #00000040;
+}
+
+.list-wrapper {
+  min-height: calc(100vh - 127px);
+}
+
+.items-button-container {
+  margin: 20px 10px;
+}
+
+.custom-add {
+  width: 100%;
+  margin: 10px 0px;
+}
+
+.list-header {
+  display: flex;
+  padding: 10px;
+  background: linear-gradient(#007bff, #415dc1);
+  color: #fff;
+  font-weight: bold;
+}
+
+.item-category {
+  flex: 1;
+  text-align: right;
+}
+
+.back-to-dashboard {
+  flex: 1;
+  text-align: left;
+  font-weight: bold;
+}
+
+.back-to-dashboard::before {
+  content: "";
+  background-image: url("../../assets/img/undo.svg");
+  display: inline-block;
+  width: 26px;
+  height: 18px;
+  font-weight: bold;
+  background-repeat: no-repeat;
+  background-position: 0 1px;
+}
+
+.Grocery {
+  background-image: url("../../assets/img/groceries.jpg");
+}
+
+.Medicine {
+  background-image: url("../../assets/img/medicines.jpg");
+}
+
+.Meat {
+  background-image: url("../../assets/img/chicken.jpg");
+}
+
+@media (min-width: 549px) {
+  .item-image {
+    background-position: -400px -400px;
+    background-size: auto;
+  }
+}
