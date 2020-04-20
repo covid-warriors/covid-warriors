@@ -3,31 +3,31 @@
     "category": "Grocery",
     "items": [
       {
-        "id": 3,
+        "id": 0,
         "name": "Milk",
         "unit": "ltr",
         "monthlyUnits": 5,
         "stock": 0,
         "notifyWhenUnitReaches": 3,
-        "notify": "Weekly"
+        "consumptionTimeframe": "Weekly"
       },
       {
         "id": 3,
         "name": "Bread",
         "unit": "pack",
         "monthlyUnits": 5,
-        "stock": 0,
+        "stock": 1,
         "notifyWhenUnitReaches": 3,
-        "notify": "Weekly"
+        "consumptionTimeframe": "Monthly"
       },
       {
-        "id": 4,
+        "id": 1,
         "name": "Dal",
         "unit": "kg",
         "monthlyUnits": 40,
         "stock":4,
         "notifyWhenUnitReaches": 1,
-        "notify": "Monthly"
+        "consumptionTimeframe": "Monthly"
       }
     ]
   },
@@ -35,31 +35,30 @@
     "category": "Meat",
     "items": [
       {
-        "id": 1,
+        "id": 0,
         "name": "Chicken",
         "unit": "kg",
         "monthlyUnits": 10,
         "stock": 2,
         "notifyWhenUnitReaches": 2,
-        "notify": "Weekly"
+        "consumptionTimeframe": "Weekly"
       },
       {
-        "id": 2,
+        "id": 1,
         "name": "Meat",
         "unit": "kg",
         "monthlyUnits": 20,
         "stock": 4,
         "notifyWhenUnitReaches": 1,
-        "notify": "Monthly"
-      },
-      {
-        "id": 2,
+        "consumptionTimeframe": "Monthly"
+      },{
+        "id": 3,
         "name": "Koyel",
         "unit": "kg",
         "monthlyUnits": 5,
         "stock": 4,
         "notifyWhenUnitReaches": 1,
-        "notify": "Monthly"
+        "consumptionTimeframe": "Monthly"
       }
     ]
   },
@@ -67,22 +66,31 @@
     "category": "Medicine",
     "items": [
       {
-        "id": 10,
+        "id": 0,
         "name": "Hydroxychloroquine",
         "unit": "pack",
         "monthlyUnits": 10,
         "stock": 9,
-        "notifyWhenUnitReaches": 2,
-        "notify": "Monthly"
+        "notifyWhenUnitReaches": 2,        
+        "consumptionTimeframe": "Weekly"
       },
       {
-        "id": 12,
+        "id": 1,
         "name": "Decolic",
         "unit": "pack",
         "monthlyUnits": 10,
         "stock": 0.5,
-        "notifyWhenUnitReaches": 1,
-        "notify": "Monthly"
+        "notifyWhenUnitReaches": 1,        
+        "consumptionTimeframe": "Weekly"
+      },
+      {
+        "id": 1,
+        "name": "Pantop DSR",
+        "unit": "pack",
+        "monthlyUnits": 10,
+        "stock": 1,
+        "notifyWhenUnitReaches": 4,        
+        "consumptionTimeframe": "Weekly"
       }
     ]
   }

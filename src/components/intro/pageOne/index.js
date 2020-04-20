@@ -3,7 +3,7 @@ import '../style.css';
 import intro1 from '../../../assets/img/introOne.png';
 
 const IntroOne = () => (
-	<div className="card">
+	<div className="card intro-card-1">
 		<div className="card-body">
 			<img className="card-img-top" src={intro1} alt="Intro One" />
 			<h5 className="card-title">Dashborad</h5>

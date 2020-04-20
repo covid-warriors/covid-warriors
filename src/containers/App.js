@@ -35,6 +35,7 @@ class App extends Component {
   }
 
   updateInventoryData = (data) => {
+    console.log('data----', data);
     this.setState({ inventoryData: data });
   }
 
