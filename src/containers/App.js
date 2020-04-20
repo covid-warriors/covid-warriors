@@ -13,9 +13,13 @@ import Header from '../components/Header/index';
 import Footer from '../components/Footer';
 import Dashboard from './Dashboard';
 import AddEditInventories from './AddEditInventories';
+import AddItems from './AddItems';
 import ChatBot from '../components/ChatBot/ChatBot';
 import Login from '../containers/Login/login';
 import ListItems from '../components/ListItems/ListItems';
+
+import IntroOne from '../components/intro/pageOne';
+import IntroTwo from '../components/intro/pageTwo';
 
 import InventoryData from '../data/inventory.json';
 import './App.css';
@@ -35,7 +39,6 @@ class App extends Component {
   }
 
   authorizeUser = ({ userName, password }) => {
-    console.log('username and password--', userName, password);
     if (userName && password) {
       this.setState({
         isLoggedIn: true
@@ -62,6 +65,17 @@ class App extends Component {
               <Switch>
                 <Route
                   exact
+                  path="/IntroOne"
+                  component={IntroOne}
+                />
+                <Route
+                  exact
+                  path="/IntroTwo"
+                  component={IntroTwo}
+                />
+
+                <Route
+                  exact
                   path="/dashboard"
                   component={Dashboard}
                 />
@@ -79,6 +93,11 @@ class App extends Component {
                   exact
                   path="/add-edit-inventory"
                   component={AddEditInventories}
+                />
+                <Route
+                  exact
+                  path="/add-items"
+                  component={AddItems}
                 />
                 <Route
                   exact
