@@ -14,7 +14,15 @@ const ListItems = (props) => {
   context.inventoryData.forEach((categoryBasedObject, index) => {
     if (categoryBasedObject.category === selectedCategory) {
       categoryBasedObject.items.forEach((item, count) => {
-        list.push(<ListItem key={'1' + index + count} item={item} {...props} />);
+        list.push(
+          <ListItem
+            key={'1' + index + count}
+            count={count}
+            item={item}
+            {...props}
+            selectedCategory={selectedCategory}
+          />
+        );
       });
     }
   });

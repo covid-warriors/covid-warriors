@@ -35,7 +35,6 @@ class App extends Component {
   }
 
   updateInventoryData = (data) => {
-    console.log('data----', data);
     this.setState({ inventoryData: data });
   }
 
@@ -98,7 +97,7 @@ class App extends Component {
                 <Route
                   exact
                   path="/add-items"
-                  component={AddItems}
+                  render={ props => <AddItems {...props} />}
                 />
                 <Route
                   exact

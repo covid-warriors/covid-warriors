@@ -60,7 +60,6 @@ static contextType = AppContext;
     }
 
     render = () => {
-        console.log(this.context);
         const { items, modified } = this.state;
         return (
             <div className="container-fluid add-edit-panel">

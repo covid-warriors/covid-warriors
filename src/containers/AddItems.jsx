@@ -20,7 +20,7 @@ class AddEditInventory extends Component {
         };
     }
 
-    clearItemsDetails = () => {
+    /* clearItemsDetails = () => {
         this.setState({
             itemName: '',
             category: window.selectedCategory || '',
@@ -29,7 +29,7 @@ class AddEditInventory extends Component {
             monthlyUnits: '',
             stock: ''
         });
-    }
+    } */
 
     onSubmitHandle = () => {
 
@@ -53,7 +53,8 @@ class AddEditInventory extends Component {
         initialInventory[categoryIndex].items.push(newRow);
 
         this.props.context.updateInventoryData(initialInventory);
-        this.clearItemsDetails();
+        /* this.clearItemsDetails(); */
+        this.props.history.push('/list-items');
     }
 
     render = () => {
@@ -83,8 +84,8 @@ class AddEditInventory extends Component {
                         <div className="form-group col-md-6">
                             <select className="custom-select mr-sm-2" value={consumptionTimeframe || "Timeframe"} onChange={(e) => this.setState({ 'consumptionTimeframe': e.target.value }) }>
                                 <option value="Timeframe" disabled>Consumption Timeframe</option>
-                                <option value="monthly">Monthly</option>
-                                <option value="weekly">Weekly</option>
+                                <option value="Monthly">Monthly</option>
+                                <option value="Weekly">Weekly</option>
                             </select>
                         </div>
                     </div>
