@@ -8,7 +8,7 @@ const ListItem = (props) => {
 
   const availabilityHTML = props.item.stock > 0
     ? <h5 style={{ color: 'green' }}>In stock.</h5>
-    : <h5 Style={{ color: 'red' }}>Out of stock.</h5>
+    : <h5 style={{ color: 'red' }}>Out of stock.</h5>
   return (
     <div className="list-item">
       <div className="left-side">

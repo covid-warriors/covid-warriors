@@ -30,7 +30,7 @@ const ListItems = (props) => {
         <div className="list-items">
           {list}
         </div>
-        <button onClick={() => props.history.push('/add-items')} class="btn btn-primary custom-add">Add Item</button>
+        <button onClick={() => props.history.push('/add-items')} className="btn btn-primary custom-add">Add Item</button>
       </div>
     </div>
   );
