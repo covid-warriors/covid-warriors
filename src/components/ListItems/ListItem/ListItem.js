@@ -30,7 +30,7 @@ const ListItem = (props) => {
 
       </div>
       <div className="right-side">
-        <p className="notification">{props.item.notify} notofication</p>
+        <p className="notification">{props.item.consumptionTimeframe} notofication</p>
         <img src={DeleteIcon} alt="delete item" />
 
       </div>
