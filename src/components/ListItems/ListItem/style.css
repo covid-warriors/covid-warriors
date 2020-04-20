@@ -75,3 +75,12 @@
 .left-side .right-hand-section .bottom {
   flex: 1;
 }
+
+.view-map {
+  margin: 0px;
+  position: absolute;
+  bottom: 5px;
+  right: 5px;
+  font-size: 10px;
+  text-decoration: underline;
+}

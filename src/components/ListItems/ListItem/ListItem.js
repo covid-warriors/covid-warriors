@@ -45,7 +45,7 @@ const ListItem = (props) => {
       <div className="right-side">
         <p className="notification">{props.item.consumptionTimeframe} notification</p>
         <img src={DeleteIcon} alt="delete item" onClick={removeCurrentItem} />
-
+        <p className="view-map" onClick={()=> props.history.push('/location')}>View on map</p>
       </div>
     </div>
   );

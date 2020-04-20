@@ -17,6 +17,7 @@ import AddItems from './AddItems';
 import ChatBot from '../components/ChatBot/ChatBot';
 import Login from '../containers/Login/login';
 import ListItems from '../components/ListItems/ListItems';
+import Location from '../components/Location/Location';
 
 import IntroOne from '../components/intro/pageOne';
 import IntroTwo from '../components/intro/pageTwo';
@@ -88,6 +89,11 @@ class App extends Component {
                   exact
                   path="/list-items"
                   render={ props => <ListItems {...props} />}
+                />
+                <Route
+                  exact
+                  path="/location"
+                  render={ props => <Location {...props} />}
                 />
                 <Route
                   exact
