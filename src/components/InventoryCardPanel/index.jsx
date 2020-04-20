@@ -9,17 +9,17 @@ const InventoryCardPanel = () => {
   return (
     <React.Fragment>
       <h4>All items</h4>
-      <div className="inventory-card">
-        <Link to="/add-edit-inventory" onClick={() => setCurrentCategory('Grocery')}>
+      <div className="inventory-card row">
+        <Link to="/add-edit-inventory" className="col-md-6" onClick={() => setCurrentCategory('Grocery')}>
           <div className="grocery-icon"></div>
         </Link>
-        <Link to="/add-edit-inventory" onClick={() => setCurrentCategory('Meat')}>
+        <Link to="/add-edit-inventory" className="col-md-6" onClick={() => setCurrentCategory('Meat')}>
           <div className="meat-icon"></div>
         </Link>
-        <Link to="/add-edit-inventory" onClick={() => setCurrentCategory('Medicine')}>
+        <Link to="/add-edit-inventory" className="col-md-6" onClick={() => setCurrentCategory('Medicine')}>
           <div className="medicine-icon"></div>
         </Link>
-        <a href="#">
+        <a href="#" className="col-md-6">
           <div className="plus-icon"></div>
         </a>
       </div>

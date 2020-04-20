@@ -31,6 +31,7 @@ class Dasboard extends Component {
 						<div className="container-fluid">
 							<h4 style={{ margin: '8px' }}>Current status</h4>
 							<InventoryGraphicalPanel />
+							<hr />
 							<InventoryCardPanel />
 						</div>
 					</main>
