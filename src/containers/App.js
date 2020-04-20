@@ -14,6 +14,9 @@ import Footer from '../components/Footer';
 import Dashboard from './Dashboard';
 import AddEditInventories from './AddEditInventories';
 
+import IntroOne from '../components/intro/pageOne';
+import IntroTwo from '../components/intro/pageTwo';
+
 import InventoryData from '../data/inventory.json';
 
 import './App.css';
@@ -40,6 +43,16 @@ class App extends Component {
             <Header />
             <Router>
               <Switch>
+                <Route
+                  exact
+                  path="/IntroOne"
+                  component={IntroOne}
+                />
+                <Route
+                  exact
+                  path="/IntroTwo"
+                  component={IntroTwo}
+                />
 
                 <Route
                   exact
