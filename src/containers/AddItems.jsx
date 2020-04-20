@@ -11,63 +11,54 @@ class AddEditInventory extends Component {
     constructor(props, context) {
         super(props, context);
         this.state = {
-            name: '',
+            itemName: '',
             category: window.selectedCategory || '',
             consumptionTimeframe: '',
             unit: '',
             monthlyUnits: '',
-            stock: '',
-            items: this.context.inventoryData.filter(obj => {
-                return obj.category === window.selectedCategory
-            })[0].items,
-            addEnable: false
+            stock: ''
         };
     }
 
-    addNewRow = () => {
-        const newRow = {
-            "id": Math.random(),
-            "name": "",
-            "unit": "",
-            "monthlyUnits": 0,
-            "stock": 0,
-            "notifyWhenUnitReaches": 0
-        };
-        this.setState(prevState => ({
-            items: [...prevState.items, newRow]
-        }));
-    }
-
-    deleteRow = (rowIndex) => {
-        const updatedArray = [...this.state.items];
-        updatedArray.splice(rowIndex, 1);
-        this.setState({ items: updatedArray, addEnable: true });
-    }
-
-    editData = (field, index, fieldValue) => {
-        this.setState(prevState => {
-            const newItems = [...prevState.items];
-            newItems[index][field] = fieldValue;
-            return { items: newItems, addEnable: true };
-        })
+    clearItemsDetails = () => {
+        this.setState({
+            itemName: '',
+            category: window.selectedCategory || '',
+            consumptionTimeframe: '',
+            unit: '',
+            monthlyUnits: '',
+            stock: ''
+        });
     }
 
     onSubmitHandle = () => {
+
+        const { itemName, category, consumptionTimeframe, unit, monthlyUnits, stock } = this.state;
         let initialInventory = this.props.context.inventoryData;
+        const itemsInCategoryCurrently = this.context.inventoryData.filter(obj => {
+            return obj.category === category
+        })[0].items.length;
 
+        const newRow = {
+            "id": (itemsInCategoryCurrently - 1),
+            "name": itemName,
+            "unit": unit,
+            "monthlyUnits": monthlyUnits,
+            "stock": stock,
+            "notifyWhenUnitReaches": 2,
+            "consumptionTimeframe": consumptionTimeframe
+        };
 
-        var replacement = { "category": window.selectedCategory, "items": this.state.items };
-        initialInventory = initialInventory.map(function (elt) {
-            return elt.category === window.selectedCategory ? replacement : elt;
-        });
+        var categoryIndex = initialInventory.map(function(e) { return e.category; }).indexOf(category);
+        initialInventory[categoryIndex].items.push(newRow);
 
         this.props.context.updateInventoryData(initialInventory);
-        this.setState({ addEnable: false });
+        this.clearItemsDetails();
     }
 
     render = () => {
-        console.log(this.context);
-        const { items, addEnable, name, category, consumptionTimeframe, unit, monthlyUnits, stock } = this.state;
+        const { itemName, category, consumptionTimeframe, unit, monthlyUnits, stock } = this.state;
+        const enableAdd = (itemName && category && consumptionTimeframe && unit && monthlyUnits && stock);
         return (
             <div className="container-fluid add-edit-panel">
                 <div className="row">
@@ -77,21 +68,21 @@ class AddEditInventory extends Component {
                 <form>
                     <div className="form-row">
                         <div className="form-group col-md-12">
-                            <input type="text" className="form-control" aria-label="Item Name" aria-describedby="inputGroup-sizing-sm" value={name} onChange={(e) => this.setState({ 'name': e.target.value }) } placeholder="Item" />
+                            <input type="text" className="form-control" aria-label="Item Name" aria-describedby="inputGroup-sizing-sm" value={itemName} onChange={(e) => this.setState({ 'itemName': e.target.value }) } placeholder="Item" />
                         </div>
                     </div>
                     <div className="form-row">
                         <div className="form-group col-md-6">
-                            <select className="custom-select mr-sm-2">
-                                <option disabled value={category} onChange={(e) => this.setState({ 'category': e.target.value }) } >Choose Category</option>
+                            <select className="custom-select mr-sm-2" value={category} onChange={(e) => this.setState({ 'category': e.target.value }) }>
+                                <option disabled>Choose Category</option>
                                 <option value="Grocery" >Grocery</option>
                                 <option value="Meat">Meat</option>
                                 <option value="Medicine">Medicine</option>
                             </select>
                         </div>
                         <div className="form-group col-md-6">
-                            <select className="custom-select mr-sm-2">
-                                <option selected disabled value={consumptionTimeframe} onChange={(e) => this.setState({ 'consumptionTimeframe': e.target.value }) }>Consumption Timeframe</option>
+                            <select className="custom-select mr-sm-2" value={consumptionTimeframe || "Timeframe"} onChange={(e) => this.setState({ 'consumptionTimeframe': e.target.value }) }>
+                                <option value="Timeframe" disabled>Consumption Timeframe</option>
                                 <option value="monthly">Monthly</option>
                                 <option value="weekly">Weekly</option>
                             </select>
@@ -99,11 +90,11 @@ class AddEditInventory extends Component {
                     </div>
                     <div className="form-row">
                         <div className="form-group col-md-4">
-                            <input type="number" className="form-control" aria-label="Item stock" aria-describedby="inputGroup-sizing-sm" value={stock} onChange={(e) => this.setState({ 'stock': e.target.value }) } placeholder="Stock" />
+                            <input type="text" className="form-control" aria-label="Item stock" aria-describedby="inputGroup-sizing-sm" value={stock} onChange={(e) => this.setState({ 'stock': (e.target.value).replace(/\D+/g, '') }) } placeholder="Stock" />
                         </div>
                         <div className="form-group col-md-4">
-                            <select className="custom-select mr-sm-2">
-                                <option selected disabled value={unit} onChange={(e) => this.setState({ 'unit': e.target.value }) }>Unit</option>
+                            <select className="custom-select mr-sm-2" value={unit || "unit"} onChange={(e) => this.setState({ 'unit': e.target.value }) }>
+                                <option value="unit" disabled>Unit</option>
                                 <option value="pack">Pack</option>
                                 <option value="ltr">Litre</option>
                                 <option value="kg">Kilograms</option>
@@ -111,12 +102,12 @@ class AddEditInventory extends Component {
                             </select>
                         </div>
                         <div className="form-group col-md-4">
-                            <input type="number" className="form-control" aria-label="Item consumption amount" aria-describedby="inputGroup-sizing-sm" value={monthlyUnits} onChange={(e) => this.setState({ 'monthlyUnits': e.target.value }) } placeholder="Monthly comsumption amount" />
+                            <input type="text" className="form-control" aria-label="Item consumption amount" aria-describedby="inputGroup-sizing-sm" value={monthlyUnits} onChange={(e) => this.setState({ 'monthlyUnits': (e.target.value).replace(/\D+/g, '') }) } placeholder="Monthly comsumption amount" />
                         </div>
                     </div>
                     <button
                         type="button"
-                        className={`add-button btn ${addEnable ? 'btn-success' : 'btn-secondary'} btn-sm`}
+                        className={`add-button btn ${ enableAdd ? 'btn-success' : 'btn-secondary'} btn-sm`}
                         onClick={this.onSubmitHandle}
                     >
                         Add
