@@ -62,7 +62,7 @@ class AddEditInventory extends Component {
         return (
             <div className="container-fluid add-edit-panel">
                 <div className="row">
-                    <Link to="/add-edit-inventory">Go Back...</Link>
+                    <Link to="/list-items">Go Back...</Link>
                 </div>
                 <h4 className="mt-4">Add items</h4>
                 <form>
