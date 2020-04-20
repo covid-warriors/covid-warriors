@@ -5,10 +5,13 @@ import AppContext from "../AppContext";
 import './AddEditInventory.css';
 
 class AddEditInventory extends Component {
-    constructor(props) {
-        super(props);
+
+static contextType = AppContext;
+
+    constructor(props, context) {
+        super(props, context);
         this.state = {
-            items: this.props.context.inventoryData.filter(obj => {
+            items: this.context.inventoryData.filter(obj => {
                 return obj.category === window.selectedCategory
             })[0].items,
             modified: false
@@ -17,7 +20,7 @@ class AddEditInventory extends Component {
 
     addNewRow = () => {
         const newRow = {
-            "id": 1,
+            "id": Math.random(),
             "name": "",
             "unit": "",
             "monthlyUnits": 0,
@@ -57,6 +60,7 @@ class AddEditInventory extends Component {
     }
 
     render = () => {
+        console.log(this.context);
         const { items, modified } = this.state;
         return (
             <div className="container-fluid add-edit-panel">
@@ -68,7 +72,6 @@ class AddEditInventory extends Component {
                     <table className="table table-sm">
                         <thead>
                             <tr>
-                                <th scope="col">#</th>
                                 <th scope="col">Item</th>
                                 <th scope="col">Monthly consumption (kg)</th>
                                 <th scope="col">Current Stock (kg)</th>
@@ -79,7 +82,6 @@ class AddEditInventory extends Component {
                             {
                                 items.map((n, i) => (
                                     <tr key={i}>
-                                        <th scope="row">{i + 1}</th>
                                         <td><input type="text" className="form-control" aria-label="Item Name" aria-describedby="inputGroup-sizing-sm" value={n.name} onChange={(e) => this.editData('name', i, e.target.value)} /></td>
                                         <td><input type="number" className="form-control" aria-label="Item monthly usage" aria-describedby="inputGroup-sizing-sm" value={n.monthlyUnits} onChange={(e) => this.editData('monthlyUnits', i, e.target.value)} /></td>
                                         <td><input type="number" className="form-control" aria-label="Item in Stock" aria-describedby="inputGroup-sizing-sm" value={n.stock} onChange={(e) => this.editData('stock', i, e.target.value)} /></td>

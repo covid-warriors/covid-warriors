@@ -18,27 +18,25 @@ const BarChart = (props) => {
 
     progressClass.push(`width-${divWidth}`);
 
-    if (divWidth > 0 && divWidth < 33) {
+    if (divWidth > 0 && divWidth < 20) {
       progressClass.push('red');
     }
 
-    if (divWidth > 33 && divWidth < 66) {
+    if (divWidth >= 20 && divWidth < 66) {
       progressClass.push('amber');
     }
 
-    if (divWidth > 66) {
+    if (divWidth >= 66) {
       progressClass.push('green');
     }
   return (
-    <React.Fragment key={index}>
+    <div style={{display: 'flex'}} className="label-and-bar-wrapper" key={index}>
       <div className="name-of-item">{item.name}</div>
-      <div data-tip={`${item.monthlyUnits - item.stock} item(s) already consumed`} key={index} className="items-parent">
-        <div className={progressClass.join(" ")}>
-          <div data-tip={`${item.stock} item(s) available`} style={{ fontSize: '12px' }}>{divWidth}%</div>
-        </div>
+      <div data-tip={`${item.stock} item(s) in stock, ${item.monthlyUnits - item.stock} item(s) consumed`} key={index} className="items-parent">
+        <div className={progressClass.join(" ")}></div>
       </div>
       <ReactTooltip />
-    </React.Fragment>
+    </div>
   );
   });
 

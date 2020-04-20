@@ -1,40 +1,44 @@
 import React, { Component } from 'react';
 
-import AppContext from "../AppContext";
-
 import SidePanel from '../components/SidePanel';
 import InventoryGraphicalPanel from '../components/InventoryGraphicalPanel';
 import InventoryCardPanel from '../components/InventoryCardPanel';
 
+const helpAssistantStyle = {
+	display: 'none',
+	position: 'fixed',
+	bottom: '25px',
+	right: '25px',
+	height: '59px',
+	width: '59px',
+	borderRadius: '38px',
+	backgroundColor: 'aquamarine',
+	textAlign: 'center',
+	lineHeight: '53px',
+	boxShadow: '0px 0px 4px 2px #000',
+	cursor: 'pointer'
+};
+
 class Dasboard extends Component {
-	constructor(props) {
-		super(props);
-	}
+
 	render = () => {
+		console.log('navigation', this.props.navigation);
 		return (
 			<div id="layoutSidenav">
 				<SidePanel />
 				<div id="layoutSidenav_content">
 					<main>
 						<div className="container-fluid">
-							<h4 className="mt-4">Inventory status</h4>
-							<InventoryGraphicalPanel inventory={this.props.context.inventoryData} />
+							<h4 style={{ margin: '8px' }}>Current status</h4>
+							<InventoryGraphicalPanel />
 							<InventoryCardPanel />
 						</div>
 					</main>
+					<div style={helpAssistantStyle}>HELP</div>
 				</div>
 			</div>
 		);
 	}
 }
-const withContext = (Component) => {
-	return (props) => (
-		<AppContext.Consumer>
-			{(context) => {
-				return <Component {...props} context={context} />
-			}}
-		</AppContext.Consumer>
-	)
-}
 
-export default withContext(Dasboard);
+export default Dasboard;

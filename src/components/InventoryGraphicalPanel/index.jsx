@@ -1,20 +1,23 @@
-import React, { memo } from 'react';
+import React, { memo, useContext } from 'react';
 
 import Radium from 'radium';
 import './style.css';
 import BarChart from '../barChart/BarChart';
+import AppContext from '../../AppContext';
 
-const InventoryGraphicalPanel = ({ inventory }) => {
-  
+const InventoryGraphicalPanel = () => {
+
+  const { inventoryData } = useContext(AppContext);
+
   return (
     <div className="row graph-panel" style={{ minHeight: '300px' }}>
       {
-        inventory.map((n, i) => (
+        inventoryData.map((inventory, i) => (
           <div className="col-xl-6" key={i}>
             <div className="card">
-              <div className="card-body">
-                <h4>{n.category}</h4>
-                <BarChart items={n.items} />
+              <div className="card-body" style={{ padding: '6px 13px' }}>
+                <h6>{inventory.category}</h6>
+                <BarChart items={inventory.items} />
               </div>
             </div>
           </div>

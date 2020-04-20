@@ -1,10 +1,16 @@
-
 .items-parent {
   position: relative;
   height: 16px;
   background-color: gainsboro;
   width: 100%;
   margin: 5px;
+}
+
+.name-of-item {
+  min-width: 95px;
+  text-align: left;
+  flex-basis: 23%;
+  line-height: 16px;
 }
 
 .width-10 {
@@ -55,7 +61,6 @@
   right: 0;
   left: 0;
   height: 16px;
-  
 }
 
 .red {

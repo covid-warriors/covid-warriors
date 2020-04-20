@@ -13,34 +13,52 @@ import Header from '../components/Header/index';
 import Footer from '../components/Footer';
 import Dashboard from './Dashboard';
 import AddEditInventories from './AddEditInventories';
+import ChatBot from '../components/ChatBot/ChatBot';
+import Login from '../containers/Login/login';
 
 import InventoryData from '../data/inventory.json';
-
 import './App.css';
 
 class App extends Component {
-  constructor(props) {
-    super(props);
+  constructor(props, context) {
+    super(props, context);
     this.state = {
-      inventoryData: InventoryData
+      inventoryData: InventoryData,
+      isLoggedIn: false
     };
-    window.selectedCategory = 'grocery';
+    window.selectedCategory = 'Grocery';
   }
 
   updateInventoryData = (data) => {
     this.setState({ inventoryData: data });
   }
 
+  authorizeUser = ({ userName, password }) => {
+    console.log('username and password--', userName, password);
+    if (userName && password) {
+      this.setState({
+        isLoggedIn: true
+      });
+    }
+  }
+
+  routePath = () => {
+    return this.state.isLoggedIn ? <Redirect to="/dashboard" /> : <Redirect to="/login" />;
+  }
+
   render = () => {
-    const loggedIn = true;
     return (
-      <AppContext.Provider value={{ inventoryData: this.state.inventoryData, updateInventoryData: this.updateInventoryData }}>
+      <AppContext.Provider value={{
+        inventoryData: this.state.inventoryData,
+        isLoggedIn: this.state.isLoggedIn,
+        updateInventoryData: this.updateInventoryData,
+        authorizeUser: this.authorizeUser
+      }}>
         <StyleRoot>
           <center>
             <Header />
             <Router>
               <Switch>
-
                 <Route
                   exact
                   path="/dashboard"
@@ -48,23 +66,25 @@ class App extends Component {
                 />
                 <Route
                   exact
+                  path="/login"
+                  render={ props => <Login {...props} />}
+                />
+                <Route
+                  exact
                   path="/add-edit-inventory"
                   component={AddEditInventories}
                 />
-                <Route exact path="/" render={() => (
-                  loggedIn ? (
-                    <Redirect to="/dashboard" />
-                  ) : (
-                      <Redirect to="/login" />
-                    )
-                )} />
-
+                <Route
+                  exact
+                  path="/chat-assistant"
+                  component={ChatBot}
+                />
+                <Route exact path="/" render={this.routePath} />
               </Switch>
             </Router>
             <Footer />
           </center>
         </StyleRoot>
-
       </AppContext.Provider >
     );
   }

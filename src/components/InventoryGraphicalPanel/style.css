@@ -8,6 +8,10 @@
 }
 
 .graph-panel div.card {
+  margin: 4px;
+}
+
+.graph-panel {
   margin-bottom: 10px;
 }
 
