@@ -21,6 +21,27 @@ const helpAssistantStyle = {
 
 class Dasboard extends Component {
 
+	postInventoryDetailsInMessage = () => {
+		fetch('https://home-inventory-management.eu-gb.mybluemix.net/v1/message', {
+			method: 'POST',
+			headers: {
+				Accept: 'application/json',
+				'Content-Type': 'application/json',
+			},
+			body: JSON.stringify([{
+				"name":"Milk"
+				}, {
+				"name":"Potato"
+				}, {
+				"name":"Rice "
+				}, {
+				"name":"Fish "
+				}, {
+				"name":"Medicines"
+				}]),
+		});
+	}
+
 	render = () => {
 		return (
 			<div id="layoutSidenav">
@@ -30,6 +51,7 @@ class Dasboard extends Component {
 						<div className="container-fluid">
 							<h4 style={{ margin: '8px' }}>Current status</h4>
 							<InventoryGraphicalPanel />
+							<button type="button" className="btn btn-primary btn-sm" onClick={this.postInventoryDetailsInMessage}>Get inventory details in message</button>
 							<hr />
 							<InventoryCardPanel />
 						</div>
