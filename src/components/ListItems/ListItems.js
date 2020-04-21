@@ -33,6 +33,7 @@ const ListItems = (props) => {
       <div className="list-header">
         <div onClick={() => props.history.push('/dashboard')} className="back-to-dashboard">Back</div>
         <div className="item-category">{selectedCategory}</div>
+        <button className="view-map-cotainer" onClick={()=> props.history.push('/location')}><span>Find shop</span></button>
       </div>
       <div className="items-button-container">
         <div className="list-items">

@@ -28,15 +28,42 @@
   font-weight: bold;
 }
 
+.view-map-cotainer {
+  flex: 1;
+  text-align: center;
+  border: none;
+  background-color: transparent;
+  padding: 0;
+  color: #fff;
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+.view-map-cotainer span {
+  position: relative;
+}
+
+.view-map-cotainer span::after {
+  content: "";
+  position: absolute;
+  right: -19px;
+  top: 4px;
+  background-image: url(/static/media/pin.7508864c.svg);
+  display: inline-block;
+  width: 18px;
+  height: 18px;
+  font-weight: bold;
+  background-repeat: no-repeat;
+}
+
 .item-category {
   flex: 1;
-  text-align: right;
+  text-align: center;
 }
 
 .back-to-dashboard {
   flex: 1;
   text-align: left;
-  font-weight: bold;
 }
 
 .back-to-dashboard::before {

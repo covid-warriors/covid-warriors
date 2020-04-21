@@ -1,0 +1,26 @@
+.key-landmarks-container {
+  width: 100%;
+  padding: 10px;
+  border-bottom: 0.5px solid grey;
+  display: flex;
+}
+
+.key-landmarks-container .left-side {
+  flex-basis: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.key-landmarks-container .left-side .top {
+}
+
+.key-landmarks-container .left-side .bottom {
+  font-size: 10px;
+  color: #b8b8b8;
+}
+
+.key-landmarks-container .right-side {
+  flex-basis: 50%;
+  font-size: 10px;
+}

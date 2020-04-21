@@ -22,7 +22,6 @@ const helpAssistantStyle = {
 class Dasboard extends Component {
 
 	render = () => {
-		console.log('navigation', this.props.navigation);
 		return (
 			<div id="layoutSidenav">
 				<SidePanel />
