@@ -3,7 +3,7 @@ import './style.css';
 
 const KeyLandmark = (props) => {
   return (
-    <div className="key-landmarks-container">
+    <div className="key-landmarks-container" onClick={props.shopSelected}>
       <div className="left-side">
         <div className="top">
           <h6 className="margin-0">{props.shop.name}</h6>

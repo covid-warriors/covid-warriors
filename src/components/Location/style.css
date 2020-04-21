@@ -1,6 +1,7 @@
 .map-container {
   width: 100%;
-  min-height: 500px;
+  overflow: scroll;
+  height: 350px;
   background-position: 2px 0px;
   background-size: 100% 100%;
   background-repeat: no-repeat;
