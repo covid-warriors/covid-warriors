@@ -141,7 +141,7 @@ class App extends Component {
               </Switch>
             </Router>
             
-            {!notifyClicked && <button type="button" class="btn btn-link" onClick={this.notify}>Notify to wash hands!</button>}
+            {!notifyClicked && <button type="button" className="btn btn-link" onClick={this.notify}>Notify to wash hands!</button>}
             <Footer />
           </center>
         </StyleRoot>
