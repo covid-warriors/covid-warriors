@@ -58,7 +58,7 @@ class App extends Component {
     this.initToast();
     this.setState({ notifyClicked: true });
     const that = this;
-    setInterval(function(){ that.initToast(); }, 15000);
+    setInterval(function(){ that.initToast(); }, 30000);
   };
 
   updateInventoryData = (data) => {

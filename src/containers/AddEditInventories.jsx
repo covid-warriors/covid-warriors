@@ -25,7 +25,7 @@ static contextType = AppContext;
             "unit": "",
             "monthlyUnits": 0,
             "stock": 0,
-            "notifyWhenUnitReaches": 0
+            "notificationInterval": 0
         };
         this.setState(prevState => ({
             items: [...prevState.items, newRow]

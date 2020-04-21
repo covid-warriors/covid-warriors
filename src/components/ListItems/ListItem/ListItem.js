@@ -7,8 +7,12 @@ import DeleteIcon from '../../../assets/img/remove.svg';
 const ListItem = (props) => {
 
   const context = useContext(AppContext);
+  const numberOfDaysConsumed = Math.round((new Date().getTime() - new Date(props.item.creationDateTime).getTime()) / (1000 * 60 * 60 * 24));
 
-  const availabilityHTML = props.item.stock > 0
+  let currentStock = Math.round(props.item.stock - (numberOfDaysConsumed * props.item.unitConsumedPerDay));
+  currentStock = currentStock <= 0 ? 0 : currentStock;
+
+  const availabilityHTML = currentStock > 0
     ? <h5 style={{ color: 'green' }}>In stock.</h5>
     : <h5 style={{ color: 'red' }}>Out of stock.</h5>
 
@@ -34,7 +38,7 @@ const ListItem = (props) => {
             <h4 className="margin-0">{props.item.name}</h4>
           </div>
           <div className="middle">
-            {`Available ${props.item.stock} ${props.item.unit}.`}
+            {`Available ${currentStock} ${props.item.unit}.`}
           </div>
           <div className="bottom">
             {availabilityHTML}
@@ -43,7 +47,7 @@ const ListItem = (props) => {
       </div>
       <div className="middle-side"></div>
       <div className="right-side">
-        <p className="notification">{props.item.consumptionTimeframe} notification</p>
+        <p className="notification">Interval: {props.item.notificationInterval} days</p>
         <img src={DeleteIcon} alt="delete item" onClick={removeCurrentItem} />
       </div>
     </div>

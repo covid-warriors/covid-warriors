@@ -47,8 +47,8 @@
   content: "";
   position: absolute;
   right: -19px;
-  top: 4px;
-  background-image: url(/static/media/pin.7508864c.svg);
+  top: 2px;
+  background-image: url('../../assets/img/pin.svg');
   display: inline-block;
   width: 18px;
   height: 18px;
