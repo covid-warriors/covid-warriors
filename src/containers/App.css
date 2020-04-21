@@ -1,3 +1,19 @@
 .App {
   text-align: center;
 }
+
+.toast-background {
+  background-color: #000;
+}
+
+.toast-font-size {
+  font-size: 18px;
+}
+
+.toast-progress-bar {
+  background: #8c8686;
+}
+
+#root {
+  background-color: #f5efef;
+}

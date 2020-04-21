@@ -5,7 +5,10 @@ import {
   Route,
   Redirect
 } from "react-router-dom";
+
 import Radium, { StyleRoot } from 'radium';
+import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 import AppContext from "../AppContext";
 
@@ -25,15 +28,38 @@ import IntroTwo from '../components/intro/pageTwo';
 import InventoryData from '../data/inventory.json';
 import './App.css';
 
+toast.configure({
+  autoClose: 5000,
+  draggable: false
+});
+
+
 class App extends Component {
   constructor(props, context) {
     super(props, context);
     this.state = {
       inventoryData: InventoryData,
-      isLoggedIn: false
+      isLoggedIn: false,
+      notifyClicked: false
     };
     window.selectedCategory = 'Grocery';
   }
+
+  initToast = () => {
+    toast("It's been quite some time since you washed your hand :) !", {
+      position: toast.POSITION.BOTTOM_CENTER,
+      className: 'toast-background',
+      bodyClassName: "toast-font-size",
+      progressClassName: 'toast-progress-bar'
+    });
+  }
+
+  notify = () => {
+    this.initToast();
+    this.setState({ notifyClicked: true });
+    const that = this;
+    setInterval(function(){ that.initToast(); }, 300000);
+  };
 
   updateInventoryData = (data) => {
     this.setState({ inventoryData: data });
@@ -52,6 +78,7 @@ class App extends Component {
   }
 
   render = () => {
+    const { notifyClicked } = this.state;
     return (
       <AppContext.Provider value={{
         inventoryData: this.state.inventoryData,
@@ -113,6 +140,8 @@ class App extends Component {
                 <Route exact path="/" render={this.routePath} />
               </Switch>
             </Router>
+            
+            {!notifyClicked && <button type="button" class="btn btn-link" onClick={this.notify}>Notify to wash hands!</button>}
             <Footer />
           </center>
         </StyleRoot>
