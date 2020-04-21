@@ -1,37 +1,27 @@
-import React from 'react';
+import React, { useState } from 'react';
 
+import Map from './Map/Map';
+import ShopLocations from './../../data/data';
 import './style.css';
 import KeyLandmark from './KeyLandmark/KeyLandmark';
-const Location = () => {
-  const shops = [{
-    shopid: 1001,
-    name: 'Laksmi aata ghar',
-    distance: '0.5 Km'
-  }, {
-    shopid: 1003,
-    name: 'Babu shop',
-    distance: '1 Km'
-  }, {
-    shopid: 1012,
-    name: 'Big bazar',
-    distance: '2.5 Km'
-  }, {
-    shopid: 1039,
-    name: 'Spencer\'s',
-    distance: '3 Km'
-  }, {
-    shopid: 1381,
-    name: 'Annapurna shop',
-    distance: '10 Km'
-  }];
 
-  const shopHTML = shops.map(shop => {
-    return <KeyLandmark key={shop.shopid} shop={shop} />
+const Location = () => {
+
+  const [ state, setState ] = useState({ lat: ShopLocations.information[0].lat, long: ShopLocations.information[0].lng });
+
+  const shopHTML = ShopLocations.information.map(shop => {
+    return <KeyLandmark key={shop.shopid} shop={shop} shopSelected={() => chooseShopHandler(shop.lat, shop.lng)} />
   });
+
+  const chooseShopHandler = (lat, long) => {
+    setState({ lat, long });
+  }
 
   return (
     <div className="find-shop-container">
-      <div className="map-container"></div>
+      <div className="map-container">
+        <Map {...state} />
+      </div>
       <div className="search-location-container">
         <input className="search-map-input" type="text" placeholder="Search nearest shop" />
       </div>
