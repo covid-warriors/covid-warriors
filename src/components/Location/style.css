@@ -1,0 +1,49 @@
+.map-container {
+  width: 100%;
+  overflow: scroll;
+  height: 350px;
+  background-position: 2px 0px;
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  border-bottom: 1px solid #00000040;
+  background-image: url("../../assets/img/map-sample.jpeg");
+}
+
+.search-location-container {
+  position: relative;
+}
+
+.search-map-input {
+  height: 50px;
+  padding-left: 43px;
+  border: none;
+  outline: none;
+  width: 100%;
+}
+
+.key-shops {
+  display: flex;
+  height: 50px;
+  background-color: #f2f2f2;
+  width: 100%;
+}
+
+.key-shops button {
+  padding: 5px;
+  height: 26px;
+  margin-top: 12px;
+  line-height: 14px;
+  margin-left: 13px;
+}
+
+.search-location-container::before {
+  content: "";
+  position: absolute;
+  left: 13px;
+  top: 17px;
+  background-image: url("../../assets/img/search.svg");
+  display: inline-block;
+  width: 18px;
+  height: 18px;
+  background-repeat: no-repeat;
+}

@@ -8,7 +8,7 @@ const InventoryCardPanel = () => {
   }
   return (
     <React.Fragment>
-      <h4>All items</h4>
+      <h4>All Categories</h4>
       <div className="inventory-card row">
         <Link to="/list-items" className="col-md-6" onClick={() => setCurrentCategory('Grocery')}>
           <div className="grocery-icon"></div>

@@ -25,7 +25,7 @@ static contextType = AppContext;
             "unit": "",
             "monthlyUnits": 0,
             "stock": 0,
-            "notifyWhenUnitReaches": 0
+            "notificationInterval": 0
         };
         this.setState(prevState => ({
             items: [...prevState.items, newRow]
@@ -60,7 +60,6 @@ static contextType = AppContext;
     }
 
     render = () => {
-        console.log(this.context);
         const { items, modified } = this.state;
         return (
             <div className="container-fluid add-edit-panel">

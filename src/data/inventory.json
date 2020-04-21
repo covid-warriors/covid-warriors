@@ -6,28 +6,41 @@
         "id": 0,
         "name": "Milk",
         "unit": "ltr",
-        "monthlyUnits": 5,
-        "stock": 0,
-        "notifyWhenUnitReaches": 3,
-        "consumptionTimeframe": "Weekly"
+        "stock": 10,
+        "notificationInterval": 1,
+        "unitConsumedPerDay": 4,
+        "lowOnStockIndicatingQuantity": 2,
+        "creationDateTime": 1587309968000
+      },
+      {
+        "id": 1,
+        "name": "Egg",
+        "unit": "pc",
+        "stock": 32,
+        "notificationInterval": 6,
+        "unitConsumedPerDay": 3,
+        "lowOnStockIndicatingQuantity": 10,
+        "creationDateTime": 1587309968000
       },
       {
         "id": 3,
         "name": "Bread",
         "unit": "pack",
-        "monthlyUnits": 5,
-        "stock": 1,
-        "notifyWhenUnitReaches": 3,
-        "consumptionTimeframe": "Monthly"
+        "stock": 5,
+        "notificationInterval": 3,
+        "unitConsumedPerDay": 1,
+        "lowOnStockIndicatingQuantity": 2,
+        "creationDateTime": 1587223568000
       },
       {
-        "id": 1,
+        "id": 2,
         "name": "Dal",
         "unit": "kg",
-        "monthlyUnits": 40,
-        "stock":4,
-        "notifyWhenUnitReaches": 1,
-        "consumptionTimeframe": "Monthly"
+        "stock": 10,
+        "notificationInterval": 30,
+        "unitConsumedPerDay": 3,
+        "lowOnStockIndicatingQuantity": 10,
+        "creationDateTime": 1587223568000
       }
     ]
   },
@@ -38,27 +51,21 @@
         "id": 0,
         "name": "Chicken",
         "unit": "kg",
-        "monthlyUnits": 10,
         "stock": 2,
-        "notifyWhenUnitReaches": 2,
-        "consumptionTimeframe": "Weekly"
+        "notificationInterval": 6,
+        "unitConsumedPerDay": 1,
+        "lowOnStockIndicatingQuantity": 10,
+        "creationDateTime": 1587223568000
       },
       {
         "id": 1,
         "name": "Meat",
         "unit": "kg",
-        "monthlyUnits": 20,
         "stock": 4,
-        "notifyWhenUnitReaches": 1,
-        "consumptionTimeframe": "Monthly"
-      },{
-        "id": 3,
-        "name": "Koyel",
-        "unit": "kg",
-        "monthlyUnits": 5,
-        "stock": 4,
-        "notifyWhenUnitReaches": 1,
-        "consumptionTimeframe": "Monthly"
+        "notificationInterval": 6,
+        "unitConsumedPerDay": 1,
+        "lowOnStockIndicatingQuantity": 10,
+        "creationDateTime": 1587223568000
       }
     ]
   },
@@ -69,28 +76,31 @@
         "id": 0,
         "name": "Hydroxychloroquine",
         "unit": "pack",
-        "monthlyUnits": 10,
-        "stock": 9,
-        "notifyWhenUnitReaches": 2,        
-        "consumptionTimeframe": "Weekly"
+        "stock": 2,
+        "notificationInterval": 6,
+        "unitConsumedPerDay": 1,
+        "lowOnStockIndicatingQuantity": 10,
+        "creationDateTime": 1587137168000
       },
       {
-        "id": 1,
+        "id": 3,
         "name": "Decolic",
         "unit": "pack",
-        "monthlyUnits": 10,
-        "stock": 0.5,
-        "notifyWhenUnitReaches": 1,        
-        "consumptionTimeframe": "Weekly"
+        "stock": 30,
+        "notificationInterval": 6,
+        "unitConsumedPerDay": 1,
+        "lowOnStockIndicatingQuantity": 10,
+        "creationDateTime": 1587050768000
       },
       {
         "id": 1,
         "name": "Pantop DSR",
         "unit": "pack",
-        "monthlyUnits": 10,
-        "stock": 1,
-        "notifyWhenUnitReaches": 4,        
-        "consumptionTimeframe": "Weekly"
+        "stock": 30,
+        "notificationInterval": 6,
+        "unitConsumedPerDay": 1,
+        "lowOnStockIndicatingQuantity": 10,
+        "creationDateTime": 1587137168000
       }
     ]
   }
