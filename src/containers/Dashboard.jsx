@@ -26,18 +26,18 @@ class Dasboard extends Component {
 			method: 'POST',
 			headers: {
 				Accept: 'application/json',
-				'Content-Type': 'application/json',
+				'Content-Type': 'application/json'
 			},
 			body: JSON.stringify([{
-				"name":"Milk"
+				"name":"Bread"
 				}, {
-				"name":"Potato"
+				"name":"Dal"
 				}, {
-				"name":"Rice "
+				"name":"Chicken "
 				}, {
-				"name":"Fish "
+				"name":"Meat "
 				}, {
-				"name":"Medicines"
+				"name":"Koyel"
 				}]),
 		});
 	}

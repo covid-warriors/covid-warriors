@@ -79,6 +79,7 @@ class App extends Component {
 
   render = () => {
     const { notifyClicked } = this.state;
+    const showNotifyButton = !notifyClicked && window.location.pathname.match('/login') === null;
     return (
       <AppContext.Provider value={{
         inventoryData: this.state.inventoryData,
@@ -141,7 +142,7 @@ class App extends Component {
               </Switch>
             </Router>
             
-            {!notifyClicked && <button type="button" className="btn btn-link" onClick={this.notify}>Notify to wash hands!</button>}
+            {showNotifyButton && <button type="button" className="btn btn-link" onClick={this.notify}>Notify to wash hands!</button>}
             <Footer />
           </center>
         </StyleRoot>
