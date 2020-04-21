@@ -14,7 +14,7 @@ import Footer from '../components/Footer';
 import Dashboard from './Dashboard';
 import AddEditInventories from './AddEditInventories';
 import AddItems from './AddItems';
-import ChatBot from '../components/ChatBot/ChatBot';
+// import ChatBot from '../components/ChatBot/ChatBot';
 import Login from '../containers/Login/login';
 import ListItems from '../components/ListItems/ListItems';
 import Location from '../components/Location/Location';
@@ -105,11 +105,11 @@ class App extends Component {
                   path="/add-items"
                   render={ props => <AddItems {...props} />}
                 />
-                <Route
+                {/* <Route
                   exact
                   path="/chat-assistant"
                   component={ChatBot}
-                />
+                /> */}
                 <Route exact path="/" render={this.routePath} />
               </Switch>
             </Router>
