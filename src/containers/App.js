@@ -9,22 +9,17 @@ import {
 import Radium, { StyleRoot } from 'radium';
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-
 import AppContext from "../AppContext";
-
 import Header from '../components/Header/index';
 import Footer from '../components/Footer';
 import Dashboard from './Dashboard';
 import AddEditInventories from './AddEditInventories';
 import AddItems from './AddItems';
-// import ChatBot from '../components/ChatBot/ChatBot';
 import Login from '../containers/Login/login';
 import ListItems from '../components/ListItems/ListItems';
 import Location from '../components/Location/Location';
-
 import IntroOne from '../components/intro/pageOne';
 import IntroTwo from '../components/intro/pageTwo';
-
 import InventoryData from '../data/inventory.json';
 import './App.css';
 
@@ -32,7 +27,6 @@ toast.configure({
   autoClose: 5000,
   draggable: false
 });
-
 
 class App extends Component {
   constructor(props, context) {
@@ -57,8 +51,9 @@ class App extends Component {
   notify = () => {
     this.initToast();
     this.setState({ notifyClicked: true });
-    const that = this;
-    setInterval(function(){ that.initToast(); }, 30000);
+    setInterval(() => {
+      this.initToast();
+    }, 30000)
   };
 
   updateInventoryData = (data) => {
@@ -74,12 +69,11 @@ class App extends Component {
   }
 
   routePath = () => {
-    return this.state.isLoggedIn ? <Redirect to="/dashboard" /> : <Redirect to="/login" />;
+    return this.state.isLoggedIn ? <Redirect to="/IntroOne" /> : <Redirect to="/login" />;
   }
 
   render = () => {
-    const { notifyClicked } = this.state;
-    const showNotifyButton = !notifyClicked && window.location.pathname.match('/login') === null;
+    const { notifyClicked, isLoggedIn } = this.state;
     return (
       <AppContext.Provider value={{
         inventoryData: this.state.inventoryData,
@@ -95,33 +89,33 @@ class App extends Component {
                 <Route
                   exact
                   path="/IntroOne"
-                  component={IntroOne}
+                  render={props => <IntroOne {...props} />}
                 />
                 <Route
                   exact
                   path="/IntroTwo"
-                  component={IntroTwo}
+                  render={props => <IntroTwo {...props} />}
                 />
 
                 <Route
                   exact
                   path="/dashboard"
-                  component={Dashboard}
+                  render={props => <Dashboard {...props} />}
                 />
                 <Route
                   exact
                   path="/login"
-                  render={ props => <Login {...props} />}
+                  render={props => <Login {...props} />}
                 />
                 <Route
                   exact
                   path="/list-items"
-                  render={ props => <ListItems {...props} />}
+                  render={props => <ListItems {...props} />}
                 />
                 <Route
                   exact
                   path="/location"
-                  render={ props => <Location {...props} />}
+                  render={props => <Location {...props} />}
                 />
                 <Route
                   exact
@@ -131,18 +125,18 @@ class App extends Component {
                 <Route
                   exact
                   path="/add-items"
-                  render={ props => <AddItems {...props} />}
+                  render={props => <AddItems {...props} />}
                 />
-                {/* <Route
-                  exact
-                  path="/chat-assistant"
-                  component={ChatBot}
-                /> */}
                 <Route exact path="/" render={this.routePath} />
               </Switch>
             </Router>
-            
-            {showNotifyButton && <button type="button" className="btn btn-link" onClick={this.notify}>Notify to wash hands!</button>}
+
+            {
+              !notifyClicked && isLoggedIn &&
+              <button type="button" className="btn btn-link" onClick={this.notify}>
+                Notify to wash hands!
+              </button>
+            }
             <Footer />
           </center>
         </StyleRoot>
