@@ -6,7 +6,7 @@
         "id": 0,
         "name": "Milk",
         "unit": "ltr",
-        "stock": 10,
+        "stock": 14,
         "notificationInterval": 1,
         "unitConsumedPerDay": 4,
         "lowOnStockIndicatingQuantity": 2,
@@ -34,11 +34,11 @@
       },
       {
         "id": 2,
-        "name": "Dal",
+        "name": "Onion",
         "unit": "kg",
-        "stock": 10,
+        "stock": 12,
         "notificationInterval": 30,
-        "unitConsumedPerDay": 3,
+        "unitConsumedPerDay": 2,
         "lowOnStockIndicatingQuantity": 10,
         "creationDateTime": 1587223568000
       }
@@ -51,20 +51,20 @@
         "id": 0,
         "name": "Chicken",
         "unit": "kg",
-        "stock": 2,
+        "stock": 5,
         "notificationInterval": 6,
         "unitConsumedPerDay": 1,
-        "lowOnStockIndicatingQuantity": 10,
+        "lowOnStockIndicatingQuantity": 1,
         "creationDateTime": 1587223568000
       },
       {
         "id": 1,
-        "name": "Meat",
+        "name": "Goat meat",
         "unit": "kg",
-        "stock": 4,
+        "stock": 11,
         "notificationInterval": 6,
-        "unitConsumedPerDay": 1,
-        "lowOnStockIndicatingQuantity": 10,
+        "unitConsumedPerDay": 2,
+        "lowOnStockIndicatingQuantity": 2,
         "creationDateTime": 1587223568000
       }
     ]
@@ -74,7 +74,7 @@
     "items": [
       {
         "id": 0,
-        "name": "Hydroxychloroquine",
+        "name": "Cetzine",
         "unit": "pack",
         "stock": 2,
         "notificationInterval": 6,

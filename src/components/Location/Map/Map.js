@@ -61,10 +61,14 @@ const Map = (props) => {
 const WrappedMap = withScriptjs(withGoogleMap(Map));
 
 const GMap = props => {
+  console.log('REACT_APP_GOOGLE_MAP_API_KEY--',process.env.REACT_APP_GOOGLE_MAP_API_KEY);
+  console.log('REACT_APP_GMAP_KEY--',process.env.REACT_APP_GMAP_KEY);
+  console.log('NODE_ENV--',process.env.NODE_ENV);
+  const googleMapApiKey = process.env.REACT_APP_GMAP_KEY || process.env.REACT_APP_GOOGLE_MAP_API_KEY;
   return (
     <div className="App">
       <WrappedMap {...props}
-        googleMapURL={`https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=geometry,drawing,places&key=`}
+        googleMapURL={`https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=geometry,drawing,places&key=${googleMapApiKey}`}
         loadingElement={<div style={{ height: `100%` }} />}
         containerElement={<div style={{ height: `350px` }} />}
         mapElement={<div style={{ height: `100%` }} />}
