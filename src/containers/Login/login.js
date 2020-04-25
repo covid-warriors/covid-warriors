@@ -23,23 +23,19 @@ export default class Login extends Component {
   render() {
     return (
       <div className="login-container">
-        <form>
-          <img src={key} alt="login" />
-          <br /><br /><br />
-
-          <div className="form-group">
-            <input type="text" className="form-control" onChange={(event) => this.setState({ userName: event.target.value })} value={this.state.userName} placeholder="Enter user name" />
-          </div>
-
-          <div className="form-group">
-            <input type="password" className="form-control" onChange={(event) => this.setState({ password: event.target.value })} value={this.state.password} placeholder="Enter password" />
-          </div>
-
-          <button type="button" onClick={this.authorizeationHelper} className="btn btn-success btn-block">Login</button>
-        </form>
-
-        <br /><br />
-        <img src={logo} alt="login" />
+        <div className="login-user-input-wrapper">
+          <form>
+            <img src={key} className="lock-image" alt="lock" />
+            <div className="form-group">
+              <input type="text" className="form-control" onChange={(event) => this.setState({ userName: event.target.value })} value={this.state.userName} placeholder="Enter user name" />
+            </div>
+            <div className="form-group">
+              <input type="password" className="form-control" onChange={(event) => this.setState({ password: event.target.value })} value={this.state.password} placeholder="Enter password" />
+            </div>
+            <button type="button" onClick={this.authorizeationHelper} className="btn btn-success btn-block">Login</button>
+          </form>
+          <img src={logo} className="grocery-fruits-image" alt="fruits" />
+        </div>
       </div>
     );
   }
