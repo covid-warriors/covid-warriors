@@ -2,7 +2,7 @@ import React, { memo } from 'react';
 import '../style.css';
 import intro1 from '../../../assets/img/introTwo.png';
 
-const IntroTwo = () => (
+const IntroTwo = (props) => (
 	<div className="card intro-card-2">
 		<div className="card-body">
 			<img className="card-img-top" src={intro1} alt="Intro One" />
@@ -10,8 +10,8 @@ const IntroTwo = () => (
 			<p className="card-text">On top you can find Item lists with details.</p>
 			<p className="card-text no-margin">Bottom you can find add new item button.</p>
 			<div className="btn-group float-rigth" role="group" aria-label="Basic example">				
-				<a href="/introOne" className="btn btn-default">Back</a>
-				<a href="/dashboard" className="btn btn-info">Proceed to your dashboard</a>
+				<a  onClick={()=> props.history.push('introOne')} className="btn btn-default">Back</a>
+				<a  onClick={()=> props.history.push('dashboard')} className="btn btn-info">Proceed to your dashboard</a>
 			</div>
 		</div>
 	</div>
